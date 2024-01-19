@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 public class Paddle extends Sprite  {
 
     private int dx;
+    private int hiz = 2;
     private Image paddle = new ImageIcon("src/resources/paddle1.png").getImage();
 
 
@@ -45,12 +46,20 @@ public class Paddle extends Sprite  {
 
         if (key == KeyEvent.VK_LEFT) {
 
-            dx = -3;
+            dx = hiz * -1 ;
         }
 
         if (key == KeyEvent.VK_RIGHT) {
 
-            dx = 3;
+            dx = hiz;
+        }
+
+        if (key == KeyEvent.VK_UP && hiz < 7){
+            dx = hiz++;
+        }
+
+        if (key == KeyEvent.VK_DOWN && hiz > 0 ){
+            dx = hiz--;
         }
     }
 

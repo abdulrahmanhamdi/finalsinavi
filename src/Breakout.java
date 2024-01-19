@@ -14,8 +14,8 @@ public class Breakout extends JFrame {
     private void initUI() {
         setLayout(new BorderLayout());
 
-       // StartPanel startPanel = new StartPanel(this);
-        //add(startPanel, BorderLayout.CENTER);
+        StartPanel startPanel = new StartPanel(this);
+        add(startPanel, BorderLayout.CENTER);
 
         setTitle("Breakout");
         setSize(Commons.WIDTH, Commons.HEIGHT);
@@ -24,11 +24,10 @@ public class Breakout extends JFrame {
         setResizable(false);
     }
 
-    public void startGame(int level) {
+    public void startGame(String op , int result) {
         getContentPane().removeAll();
 
-        board = new Board(level);
-        add(board);
+        Board board = new Board(op , result);
 
         board.setFocusable(true);
         board.requestFocusInWindow();

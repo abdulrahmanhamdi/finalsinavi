@@ -7,9 +7,9 @@ import java.io.File;
 
 public class SoundManager {
 
-    private static final String BACKGROUND_MUSIC = "src/resources/skulls_adventure_1.wav";
-    private static final String GAME_OVER_SOUND = "src/resources/gameOver.wav";
-    private static final String VICTORY_SOUND = "src/resources/youWin.wav";
+    private static final String BACKGROUND_MUSIC = "resources/background.wav";
+    private static final String GAME_OVER_SOUND = "resources/forplus.wav";
+    private static final String VICTORY_SOUND = "resources/forminus.wav";
 
     private static Clip backgroundMusicClip;
 

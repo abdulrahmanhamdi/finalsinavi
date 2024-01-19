@@ -12,8 +12,15 @@ public class Sprite {
     int imageHeight;
     private Image image;
 
+    public Sprite(){
 
-    
+    }
+    public Sprite(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+
     protected void setX(int x) {
 
         this.x = x;

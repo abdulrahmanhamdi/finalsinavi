@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Fruits extends Sprite{
 
-    public static ArrayList<Fruits> features = new ArrayList<>();
+    public static ArrayList<Fruits> fruits = new ArrayList<>();
     private Image fruitsimage= new ImageIcon("src/resources/ball1.png").getImage();
     Random random= new Random();
 

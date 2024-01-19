@@ -63,7 +63,8 @@ public class StartPanel extends JPanel {
                 System.out.println("User Name: " + user);
 
                 System.out.println("Result of the calculation: " + result);
-                breakout.startGame(1);
+                String operation = num1 + " " + expression + " " + num2;
+                breakout.startGame(operation , result);
             }
         });
 
@@ -128,10 +129,13 @@ public class StartPanel extends JPanel {
 
         calculatorPanel.add(username);
         calculatorPanel.add(usernameField);
+
         calculatorPanel.add(number1Label);
         calculatorPanel.add(number1Field);
+
         calculatorPanel.add(expressionLabel);
         calculatorPanel.add(expressionField);
+
         calculatorPanel.add(number2Label);
         calculatorPanel.add(number2Field);
 

@@ -2,8 +2,8 @@ package src;
 
 public interface Commons {
 
-    int WIDTH = 580;
-    int HEIGHT = 600;
+    int WIDTH = 800;
+    int HEIGHT = 650;
     int BOTTOM_EDGE = 595;
 
     int BALLS_NUM = 20;

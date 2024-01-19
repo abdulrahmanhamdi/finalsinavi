@@ -13,4 +13,12 @@ public interface Commons {
     int INIT_PADDLE_Y = 560;
     int PERIOD = 15;
 
+    String frutes[] ={
+            "src/resources/ball1.png",
+            "src/resources/ball2.png",
+            "src/resources/ball3.png",
+            "src/resources/ball4.png"};
+
+
+
 }

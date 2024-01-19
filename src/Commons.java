@@ -19,6 +19,11 @@ public interface Commons {
             "src/resources/ball3.png",
             "src/resources/ball4.png"};
 
-
+    String fruitsNames[] ={
+            "elma",
+            "armut",
+            "muz",
+            "çilek"
+            };
 
 }

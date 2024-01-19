@@ -31,7 +31,7 @@ public class Board extends JPanel {
     private boolean inGame = true;
     private Image backgroundImage;
 
-    private int score = 0;
+    static int score = 0;
     private int timerSeconds = 0;
     private boolean youWin = true;
 

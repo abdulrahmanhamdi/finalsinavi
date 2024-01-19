@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class Fruits extends Sprite{
+public class Fruits extends Sprite implements ImageObserver {
 
     public static ArrayList<Fruits> fruits = new ArrayList<>();
     Random random= new Random();
@@ -25,12 +25,10 @@ public class Fruits extends Sprite{
     }
 
     Image getRandomImage(){
-        Image image = new ImageIcon(Commons.frutes[numberOfİmage]).getImage();
+        Image image = new ImageIcon(Commons.fruits[numberOfİmage]).getImage();
         return image;
     }
-     void drawFruits(Graphics g){
-        g.drawImage(getImage(),getX(), getY(), (ImageObserver) this);
-     }
+
      void activateFeature(){
         switch (Commons.fruitsNames[numberOfİmage]){
             case "elma":
@@ -56,6 +54,10 @@ public class Fruits extends Sprite{
         return new Rectangle(x,y,Commons.FEATURE_WIDTH,Commons.FEATURE_WIDTH);
     }
 
+    @Override
+    public boolean imageUpdate(Image image, int i, int i1, int i2, int i3, int i4) {
+        return false;
+    }
 }
 
 

@@ -8,7 +8,7 @@ public class Paddle extends Sprite  {
 
     private int dx;
     private int hiz = 2;
-    private Image paddle = new ImageIcon("src/resources/paddle1.png").getImage();
+    private Image paddle = new ImageIcon("resources/kiz3.png").getImage();
 
 
     public Paddle() {

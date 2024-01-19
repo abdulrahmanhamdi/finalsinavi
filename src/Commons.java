@@ -6,18 +6,16 @@ public interface Commons {
     int HEIGHT = 650;
     int BOTTOM_EDGE = 595;
 
-    int BALLS_NUM = 20;
-
     int FEATURE_WIDTH = 15;
     int INIT_PADDLE_X = 300;
-    int INIT_PADDLE_Y = 560;
+    int INIT_PADDLE_Y = 500;
     int PERIOD = 15;
 
-    String frutes[] ={
-            "src/resources/ball1.png",
-            "src/resources/ball2.png",
-            "src/resources/ball3.png",
-            "src/resources/ball4.png"};
+    String fruits[] ={
+            "resources/elma.png",
+            "resources/armut.png",
+            "resources/muz.png",
+            "resources/çelıkk.png"};
 
     String fruitsNames[] ={
             "elma",

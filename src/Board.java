@@ -48,7 +48,7 @@ public class Board extends JPanel {
         setFocusable(true);
         setPreferredSize(new Dimension(Commons.WIDTH, Commons.HEIGHT));
 
-        backgroundImage = new ImageIcon("src/resources/back.jpg").getImage();
+        backgroundImage = new ImageIcon("resources/oyunekrani.png").getImage();
         //youLoseImage = new ImageIcon("src/resources/you_lose.png").getImage();
         //youWinImage = new ImageIcon("src/resources/you_win.png").getImage();
 
@@ -59,6 +59,7 @@ public class Board extends JPanel {
 
 
         paddle = new Paddle();
+        Fruits.fruits.add(new Fruits(-300,200 ));
 
 
         timer = new Timer(Commons.PERIOD, new GameCycle());
@@ -72,7 +73,7 @@ public class Board extends JPanel {
             }
         });
 
-        fruitTimer = new Timer(2000, new ActionListener() {
+        fruitTimer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Fruits.fruits.add(new Fruits(random.nextInt(100,701), 0));
@@ -111,7 +112,7 @@ public class Board extends JPanel {
     private void drawObjects(Graphics2D g2d) {
 
 
-        g2d.drawString("5 + 4 ", 0,0);
+       // g2d.drawString("5 + 4 ", 0,0);
 
 
         g2d.drawImage(paddle.getImage(), paddle.getX(), paddle.getY(),
@@ -119,15 +120,16 @@ public class Board extends JPanel {
 
 
         for (int i = 0; i < Fruits.fruits.size(); i++) {
-            Fruits.fruits.get(i).drawFruits(g2d);
+            g2d.drawImage(Fruits.fruits.get(i).getImage(),Fruits.fruits.get(i).getX(),Fruits.fruits.get(i).getY(),
+                    Fruits.fruits.get(i).getImageWidth(),Fruits.fruits.get(i).getImageHeight() ,this);
             if (Fruits.fruits.get(i).getY() > Commons.BOTTOM_EDGE)
                 Fruits.fruits.remove(i);
         }
 
-        g2d.setColor(Color.WHITE);
+        g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Arial", Font.PLAIN, 20));
         g2d.drawString("Score: " + score, 20, 20);
-        g2d.drawString("Time: " + timerSeconds + "s", Commons.WIDTH - 120, 20);
+        g2d.drawString("Time: " + timerSeconds + "s", Commons.WIDTH - 120, 600);
     }
 
 
@@ -212,7 +214,7 @@ public class Board extends JPanel {
 
         for (int i = 0; i < Fruits.fruits.size(); i++) {
             if ((Fruits.fruits.get(i).getRect()).intersects(paddle.getRect())) {
-                //Fruits.fruits.get(i).activateFeature();
+                Fruits.fruits.get(i).activateFeature();
                 Fruits.fruits.remove(i);
             }
         }

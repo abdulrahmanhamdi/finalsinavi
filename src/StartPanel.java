@@ -28,7 +28,7 @@ public class StartPanel extends JPanel {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon backgroundImage = new ImageIcon("src/resources/back9.png");
+                ImageIcon backgroundImage = new ImageIcon("resources/back9.png");
                 Image img = backgroundImage.getImage();
                 g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
             }

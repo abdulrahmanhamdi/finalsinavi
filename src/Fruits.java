@@ -1,6 +1,8 @@
 package src;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,17 +10,28 @@ import java.util.Random;
 public class Fruits extends Sprite{
 
     public static ArrayList<Fruits> features = new ArrayList<>();
+    private Image fruitsimage= new ImageIcon("src/resources/ball1.png").getImage();
+    Random random= new Random();
+
+
 
     public Fruits(int X, int Y){
-        this.x = X;
-        this.y = Y;
+        super(X, Y);
+
+        setImage( getRandomImage());
     }
 
-     //void drawFeature(Graphics g);
+    Image getRandomImage(){
+        Image image = new ImageIcon(Commons.frutes[random.nextInt(4)]).getImage();
+        return image;
+    }
+     void drawFruits(Graphics g){
+        g.drawImage(getImage(),getX(), getY(), (ImageObserver) this);
+     }
     // void activateFeature();
 
     public void move(){
-        this.y += 1;
+        this.y += random.nextInt(0,4);
     }
 
     Rectangle getRect(){

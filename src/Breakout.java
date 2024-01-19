@@ -28,7 +28,7 @@ public class Breakout extends JFrame {
         getContentPane().removeAll();
 
         Board board = new Board(op , result);
-
+        add(board);
         board.setFocusable(true);
         board.requestFocusInWindow();
 

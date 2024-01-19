@@ -39,7 +39,7 @@ public class Board extends JPanel {
     public Board(String operation, int result) {
         initBoard();
         operationName = operation;
-        result = operationResult;
+        operationResult = result;
 
     }
 
@@ -139,7 +139,7 @@ public class Board extends JPanel {
 
         if (youWin) {
 
-            SoundManager.playVictorySound();
+            //SoundManager.playVictorySound();
         } else {
             //g2d.drawImage(youLoseImage, imageX2, imageY2, this);
 
@@ -217,6 +217,10 @@ public class Board extends JPanel {
                 Fruits.fruits.get(i).activateFeature();
                 Fruits.fruits.remove(i);
             }
+        }
+
+        if(score == operationResult){
+            stopGame();
         }
     }
 }

@@ -19,7 +19,7 @@ public class Fruits extends Sprite implements ImageObserver {
     public Fruits(int X, int Y){
         super(X, Y);
         numberOfİmage=random.nextInt(4);
-        speed=random.nextInt(4);
+        speed=random.nextInt(1,4);
 
         setImage( getRandomImage());
     }

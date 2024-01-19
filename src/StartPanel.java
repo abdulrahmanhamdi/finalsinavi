@@ -64,7 +64,7 @@ public class StartPanel extends JPanel {
 
                 System.out.println("Result of the calculation: " + result);
                 String operation = num1 + " " + expression + " " + num2;
-                breakout.startGame(operation , result);
+                breakout.startGame(operation , result , user);
             }
         });
 

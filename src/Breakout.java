@@ -24,10 +24,10 @@ public class Breakout extends JFrame {
         setResizable(false);
     }
 
-    public void startGame(String op , int result) {
+    public void startGame(String op , int result,String username) {
         getContentPane().removeAll();
 
-        Board board = new Board(op , result);
+        Board board = new Board(op , result, username);
         add(board);
         board.setFocusable(true);
         board.requestFocusInWindow();

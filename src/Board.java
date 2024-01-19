@@ -13,6 +13,7 @@ public class Board extends JPanel {
     private JButton tryAgainButton;
     private Timer timer;
     private String operationName;
+    private String username;
     private int operationResult;
 
     private Timer secoundsTimer;
@@ -36,10 +37,11 @@ public class Board extends JPanel {
     private boolean youWin = true;
 
 
-    public Board(String operation, int result) {
+    public Board(String operation, int result, String username ) {
         initBoard();
         operationName = operation;
         operationResult = result;
+        this.username = username;
 
     }
 
@@ -49,8 +51,6 @@ public class Board extends JPanel {
         setPreferredSize(new Dimension(Commons.WIDTH, Commons.HEIGHT));
 
         backgroundImage = new ImageIcon("resources/oyunekrani.png").getImage();
-        //youLoseImage = new ImageIcon("src/resources/you_lose.png").getImage();
-        //youWinImage = new ImageIcon("src/resources/you_win.png").getImage();
 
         gameInit();
     }
@@ -112,7 +112,6 @@ public class Board extends JPanel {
     private void drawObjects(Graphics2D g2d) {
 
 
-       // g2d.drawString("5 + 4 ", 0,0);
 
 
         g2d.drawImage(paddle.getImage(), paddle.getX(), paddle.getY(),
@@ -134,17 +133,18 @@ public class Board extends JPanel {
 
 
     private void gameFinished(Graphics2D g2d) {
-       // int imageX2 = (Commons.WIDTH - youLoseImage.getWidth(this)) / 2;
-       // int imageY2 = (Commons.HEIGHT - youLoseImage.getHeight(this)) / 2;
 
-        if (youWin) {
+        g2d.setFont(new Font("Arial", Font.PLAIN, 20));
 
-            //SoundManager.playVictorySound();
-        } else {
+        g2d.drawString("kullanci : " + username , 200,100);
+        g2d.drawString("sure : " + timerSeconds ,200, 150);
+
+        //SoundManager.playVictorySound();
+
             //g2d.drawImage(youLoseImage, imageX2, imageY2, this);
 
             SoundManager.playGameOverSound();
-            tryAgainButton = new JButton("Try Again");
+            /*tryAgainButton = new JButton("Try Again");
             tryAgainButton.setForeground(new Color(255, 255, 255));
             tryAgainButton.setBackground(new Color(65, 72, 134));
             tryAgainButton.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -155,12 +155,12 @@ public class Board extends JPanel {
                     restartGame();
                 }
             });
-            add(tryAgainButton);
+            add(tryAgainButton);*/
 
-        }
+
     }
 
-    private void restartGame() {
+    /*private void restartGame() {
         inGame = true;
         youWin = true;
         score = 0;
@@ -169,7 +169,7 @@ public class Board extends JPanel {
         repaint();
         remove(tryAgainButton);
         SoundManager.startBackgroundMusic();
-    }
+    }*/
 
 
     private class TAdapter extends KeyAdapter {

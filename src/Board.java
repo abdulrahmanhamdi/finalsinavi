@@ -15,7 +15,7 @@ public class Board extends JPanel {
     private String operationName;
     private int operationResult;
 
-    private Timer scoreTimer;
+    private Timer secoundsTimer;
     private Timer fruitTimer;
 
 
@@ -64,7 +64,7 @@ public class Board extends JPanel {
         timer = new Timer(Commons.PERIOD, new GameCycle());
         timer.start();
 
-        scoreTimer = new Timer(1000, new ActionListener() {
+        secoundsTimer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 timerSeconds++;
@@ -80,7 +80,7 @@ public class Board extends JPanel {
             }
         });
 
-        scoreTimer.start();
+        secoundsTimer.start();
         fruitTimer.start();
     }
 
@@ -163,9 +163,7 @@ public class Board extends JPanel {
         youWin = true;
         score = 0;
         timerSeconds = 0;
-        bricksNum = 0;
         Fruits.fruits.clear();
-        gameInit();
         repaint();
         remove(tryAgainButton);
         SoundManager.startBackgroundMusic();

@@ -1,6 +1,5 @@
 package src;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -29,7 +28,7 @@ public class StartPanel extends JPanel {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon backgroundImage = new ImageIcon("src/resources/back4.jpg");
+                ImageIcon backgroundImage = new ImageIcon("src/resources/back9.png");
                 Image img = backgroundImage.getImage();
                 g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
             }
@@ -43,13 +42,15 @@ public class StartPanel extends JPanel {
         add(backgroundPanel, BorderLayout.CENTER);
     }
 
+
     private JButton createStartGameButton() {
         JButton startGameButton = new JButton("Start Game");
-        Font font = new Font("Times New Roman", Font.BOLD, 16);
+        Font font = new Font("Times New Roman", Font.BOLD, 20);
 
         startGameButton.setFont(font);
         startGameButton.setForeground(new Color(255, 255, 255));
         startGameButton.setBackground(new Color(255, 25, 129));
+        startGameButton.setBorder(BorderFactory.createLineBorder(Color.red, 2));
 
         startGameButton.addActionListener(new ActionListener() {
             @Override
@@ -69,11 +70,13 @@ public class StartPanel extends JPanel {
         return startGameButton;
     }
 
+
+
     private void addStartGameButton(JPanel panel) {
-        int startGameButtonX = 220;
+        int startGameButtonX = 350;
         int startGameButtonY = 470;
         int startGameButtonWidth = 150;
-        int startGameButtonHeight = 30;
+        int startGameButtonHeight = 50;
 
         JButton startGameButton = createStartGameButton();
         startGameButton.setBounds(startGameButtonX, startGameButtonY, startGameButtonWidth, startGameButtonHeight);
@@ -95,23 +98,24 @@ public class StartPanel extends JPanel {
     }
 
     private void addLogoLabel(JPanel panel) {
-        ImageIcon logoIcon = new ImageIcon("src/resources/logo8.png");
-        Image scaledImage = logoIcon.getImage().getScaledInstance(400, 125, Image.SCALE_SMOOTH);
+        ImageIcon logoIcon = new ImageIcon("src/resources/kiz3.png");
+        Image scaledImage = logoIcon.getImage().getScaledInstance(65, 120, Image.SCALE_SMOOTH);
         JLabel imageLabel = new JLabel(new ImageIcon(scaledImage));
-        imageLabel.setBounds(200, 50, 400, 125);
+        imageLabel.setBounds(50, 400, 65, 120);
 
         panel.add(imageLabel);
     }
 
     private void addCalculatorFields(JPanel panel) {
-        int calculatorX = 200;
-        int calculatorY = 350;
+        int calculatorX = 250;
+        int calculatorY = 170;
         int calculatorWidth = 300;
         int calculatorHeight = 100;
 
         JPanel calculatorPanel = new JPanel();
         calculatorPanel.setBounds(calculatorX, calculatorY, calculatorWidth, calculatorHeight);
-        calculatorPanel.setLayout(new GridLayout(4, 2));
+        calculatorPanel.setLayout(new GridLayout(4, 1));
+        //calculatorPanel.setBackground(new Color(179, 0, 0));
 
         JLabel username = new JLabel("User name");
         usernameField = new JTextField();
